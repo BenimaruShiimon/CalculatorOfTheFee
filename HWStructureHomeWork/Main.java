@@ -1,17 +1,16 @@
 package HWStructureHomeWork;
-
+import java.util.Scanner;
 import HWStructureHomeWork.ru.netology.service.CalculatorCustoms;
 
-import java.util.Scanner;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Здравствуйте и добро пожаловать в сервис подсчета пошлины!\n" + "Введите цену товара (в руб): ");
-        int price = sc.nextInt() / 100;
+        int price = sc.nextInt();
         System.out.print("Пожалуйста, введите вес товара (в кг): ");
-        int weight = sc.nextInt() * 100;
-        int result = CalculatorCustoms.CALCULATE_OF_THE_FEE(weight, price);
+        int weight = sc.nextInt();
+        int result = CalculatorCustoms.calculateOfTheFee(price, weight);
         System.out.print("Благодарю за ожидание!\n" + "Пошлина за провозимый вами товар составляет: " + result);
         sc.close();
     }
